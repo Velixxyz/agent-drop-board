@@ -1,0 +1,18 @@
+{
+    "dependencies": {
+        "ethers": "^6.13.4"
+    },
+    "description": "Static frontend for the Agent Drop Board: free Agent ID-gated badge claims.",
+    "devDependencies": {
+        "esbuild": "^0.24.2"
+    },
+    "license": "MIT",
+    "name": "agent-drop-board-web",
+    "private": true,
+    "scripts": {
+        "build": "esbuild src/app.js --bundle --minify --format=iife --outfile=dist/app.js && cp index.html styles.css dist/",
+        "preview": "npm run build && python3 -m http.server 4173 --directory dist"
+    },
+    "type": "module",
+    "version": "0.1.0"
+}

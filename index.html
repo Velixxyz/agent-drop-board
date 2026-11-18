@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agent Drop Board</title>
+<meta name="description" content="Free collectible badges for Agent ID holders. One badge per drop, gas only, verified on-chain." />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">&#10003;</span>
+    <span class="brand-name">Agent Drop Board</span>
+  </div>
+  <button id="connectBtn" class="btn btn-primary" type="button">Connect wallet</button>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>Free badges for Agent ID holders.</h1>
+    <p>
+      Each drop is a free collectible badge. If your wallet holds an Agent ID,
+      you can claim one badge per drop. You only pay network gas, nothing else.
+      The Agent ID check happens on-chain, inside the contract, on every claim.
+    </p>
+    <p class="hero-note" id="networkNote"></p>
+  </section>
+
+  <section aria-labelledby="dropsHeading">
+    <h2 id="dropsHeading">Drops</h2>
+    <p id="statusLine" class="status-line">Loading drops&hellip;</p>
+    <div id="dropList" class="drop-grid"></div>
+  </section>
+
+  <section class="howto" aria-labelledby="howHeading">
+    <h2 id="howHeading">How claiming works</h2>
+    <ol>
+      <li>Connect the wallet that holds your Agent ID, using your own wallet app or browser wallet.</li>
+      <li>Pick a drop and press <strong>Claim</strong>. Your wallet will ask you to confirm the transaction.</li>
+      <li>The contract checks your Agent ID on-chain. If you hold one and have not claimed this drop yet, the badge is minted to your wallet.</li>
+      <li>Nothing is charged except network gas. No payment is ever requested by this site.</li>
+    </ol>
+  </section>
+
+  <section class="disclaimer" aria-labelledby="disclaimerHeading">
+    <h2 id="disclaimerHeading">Please read</h2>
+    <ul>
+      <li>The badge is a collectible only. No token, reward, or return of any kind is promised.</li>
+      <li>This site never asks for a seed phrase, private key, or pairing code. It only uses the wallet already installed in your browser, and every transaction must be confirmed by you in your own wallet.</li>
+      <li>One badge per wallet address per drop. The contract enforces this; there is no way around it.</li>
+      <li>Claiming costs network gas, which varies. Check the gas estimate in your wallet before confirming.</li>
+    </ul>
+    <p id="contractLine" class="contract-line"></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Agent Drop Board &mdash; a community claim board for Agent ID holders. Contract source is open and verified on-chain.</p>
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
